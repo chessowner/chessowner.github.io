@@ -1,0 +1,1130 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HDEXS HD HD_高清视频社区_影像创作与放映</title>
+<meta name="description" content="HDEXS HD HD 是聚焦高清影像放映与创作的中文视频社区，提供新片首映、创作者工作流拆解、设备实测、放映活动与社区评论，适合影像创作者与高清观影爱好者。">
+<meta name="keywords" content="高清放映活动,影像创作工坊,视频调色教程,摄影机实测,短片首映">
+<style>
+:root{
+  --ink:#0d1117;
+  --ink-2:#1b2430;
+  --paper:#f6f7f9;
+  --panel:#ffffff;
+  --line:#e2e6ec;
+  --line-2:#d3d9e2;
+  --muted:#5c6878;
+  --brand:#ff4d2d;
+  --brand-2:#ff8a3d;
+  --brand-ink:#7a1c0a;
+  --accent:#0f8bd6;
+  --accent-soft:#e8f4fd;
+  --ok:#12805c;
+  --radius:14px;
+  --radius-sm:9px;
+  --shadow:0 1px 2px rgba(13,17,23,.06),0 8px 24px rgba(13,17,23,.06);
+  --shadow-lg:0 2px 4px rgba(13,17,23,.06),0 18px 44px rgba(13,17,23,.10);
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+  --sticky-offset:106px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--sticky-offset)}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--font);font-size:15px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--brand)}
+h1,h2,h3,h4{margin:0;line-height:1.3;letter-spacing:.01em}
+p{margin:0 0 .9em}
+ul,ol{margin:0 0 .9em;padding-left:1.25em}
+li{margin-bottom:.35em}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* ---------- 吸顶堆叠 ---------- */
+.sticky-stack{position:sticky;top:0;z-index:60}
+.announce{
+  background:linear-gradient(90deg,#2a1206,#4a1c07 45%,#7a1c0a);
+  color:#ffe9df;font-size:13px;letter-spacing:.01em;
+}
+.announce-inner{
+  max-width:1360px;margin:0 auto;padding:8px 24px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.announce .dot{
+  width:7px;height:7px;border-radius:50%;background:var(--brand-2);
+  box-shadow:0 0 0 4px rgba(255,138,61,.22);flex:none;
+}
+.announce b{color:#fff;font-weight:600}
+.announce .sep{opacity:.4}
+.announce a{margin-left:auto;color:#ffd0bd;border-bottom:1px dashed rgba(255,208,189,.5);white-space:nowrap}
+.announce a:hover{color:#fff}
+@media(max-width:740px){.announce a{margin-left:0}}
+
+.site-head{
+  background:rgba(255,255,255,.94);
+  backdrop-filter:saturate(180%) blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{
+  max-width:1360px;margin:0 auto;padding:10px 24px;
+  display:flex;align-items:center;gap:22px;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:none}
+.brand-mark{width:38px;height:38px;flex:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.15}
+.brand-name{font-size:16px;font-weight:800;letter-spacing:.06em}
+.brand-sub{font-size:11px;color:var(--muted);letter-spacing:.14em}
+.nav-main{display:flex;gap:2px;flex-wrap:wrap;margin-left:6px}
+.nav-main a{
+  padding:7px 11px;border-radius:8px;font-size:13.5px;color:var(--ink-2);white-space:nowrap;
+}
+.nav-main a:hover{background:#f1f3f6;color:var(--brand)}
+.head-actions{margin-left:auto;display:flex;align-items:center;gap:10px}
+.search-wrap{position:relative;display:flex;align-items:center}
+.search-wrap input{
+  width:190px;padding:8px 32px 8px 12px;border:1px solid var(--line-2);border-radius:999px;
+  font-size:13px;background:#fafbfc;color:var(--ink);
+}
+.search-wrap input:focus{background:#fff;border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-soft)}
+.search-wrap .mag{position:absolute;right:11px;top:50%;transform:translateY(-50%);width:14px;height:14px;opacity:.5;pointer-events:none}
+.btn{
+  display:inline-flex;align-items:center;gap:7px;border:0;cursor:pointer;
+  padding:9px 17px;border-radius:999px;font-size:13.5px;font-weight:600;
+}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 6px 16px rgba(255,77,45,.28)}
+.btn-primary:hover{background:#e83f1f;color:#fff}
+.btn-ghost{background:#fff;border:1px solid var(--line-2);color:var(--ink-2)}
+.btn-ghost:hover{border-color:var(--brand);color:var(--brand)}
+@media(max-width:1080px){
+  .nav-main a{padding:6px 8px;font-size:13px}
+  .search-wrap input{width:150px}
+}
+@media(max-width:900px){
+  .nav-main{display:none}
+  .head-inner{flex-wrap:wrap;gap:12px}
+}
+@media(max-width:520px){
+  .search-wrap input{width:120px}
+  .brand-sub{display:none}
+}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(1100px 520px at 88% -10%,#2b3a4e 0%,transparent 62%),
+    radial-gradient(800px 420px at 6% 108%,#3b1a10 0%,transparent 60%),
+    linear-gradient(150deg,#0d1117 0%,#141c26 52%,#1d1410 100%);
+  color:#eef2f7;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(circle at 50% 40%,#000 20%,transparent 78%);
+}
+.hero-inner{
+  position:relative;z-index:2;max-width:1360px;margin:0 auto;padding:56px 24px 60px;
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.16em;
+  color:#ffb799;text-transform:uppercase;margin-bottom:16px;
+}
+.eyebrow span{width:26px;height:1px;background:linear-gradient(90deg,#ff8a3d,transparent)}
+.hero h1{
+  font-size:clamp(38px,5.4vw,66px);font-weight:900;letter-spacing:.02em;line-height:1.05;
+  background:linear-gradient(96deg,#ffffff 12%,#ffd9c6 58%,#ff8a3d 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:18px;
+}
+.hero-lead{font-size:16px;color:#c6d0dd;max-width:36em;line-height:1.85}
+.hero-lead strong{color:#fff;font-weight:600}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero-cta .btn-primary{padding:12px 24px;font-size:14.5px}
+.hero-cta .btn-ghost{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.22);color:#eef2f7}
+.hero-cta .btn-ghost:hover{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.4)}
+.hero-stats{display:flex;gap:26px;margin-top:34px;flex-wrap:wrap}
+.hero-stats div{line-height:1.3}
+.hero-stats b{display:block;font-size:22px;font-weight:800;color:#fff;font-family:var(--mono)}
+.hero-stats small{font-size:12px;color:#8b98a9;letter-spacing:.05em}
+
+.hero-visual{position:relative;display:flex;justify-content:center}
+.viewfinder{
+  width:100%;max-width:430px;aspect-ratio:4/3.2;position:relative;
+  border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(160deg,#1c2836,#0e151d 70%);
+  box-shadow:0 30px 70px rgba(0,0,0,.5),inset 0 0 0 1px rgba(255,255,255,.04);
+}
+.vf-grid{position:absolute;inset:0;opacity:.5}
+.vf-corner{position:absolute;width:26px;height:26px;border:2px solid #ff8a3d;opacity:.85}
+.vf-corner.tl{top:16px;left:16px;border-right:0;border-bottom:0}
+.vf-corner.tr{top:16px;right:16px;border-left:0;border-bottom:0}
+.vf-corner.bl{bottom:16px;left:16px;border-right:0;border-top:0}
+.vf-corner.br{bottom:16px;right:16px;border-left:0;border-top:0}
+.vf-center{
+  position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+}
+.vf-rec{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;color:#ff6a45;letter-spacing:.2em}
+.vf-rec i{width:9px;height:9px;border-radius:50%;background:#ff4d2d;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(255,77,45,.6)}50%{opacity:.55;box-shadow:0 0 0 7px rgba(255,77,45,0)}}
+.vf-title{font-size:13px;color:#a9b7c7;letter-spacing:.22em;font-family:var(--mono)}
+.vf-bars{display:flex;gap:4px;align-items:flex-end;height:52px;margin-top:8px}
+.vf-bars i{width:6px;border-radius:2px;background:linear-gradient(180deg,#ff8a3d,#ff4d2d);opacity:.9}
+.vf-meta{
+  position:absolute;left:16px;right:16px;bottom:16px;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:11px;color:#7d8b9c;letter-spacing:.1em;
+}
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:36px;padding:44px 24px 48px}
+  .hero-visual{order:-1;justify-content:flex-start}
+  .viewfinder{max-width:100%}
+}
+
+/* ---------- 布局 ---------- */
+.layout{
+  max-width:1360px;margin:0 auto;padding:34px 24px 0;
+  display:grid;grid-template-columns:186px minmax(0,1fr) 264px;gap:28px;align-items:start;
+}
+@media(max-width:1180px){
+  .layout{grid-template-columns:minmax(0,1fr) 268px}
+  .rail-left{display:none}
+}
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;padding:26px 18px 0}
+  .rail-right{order:3}
+}
+.section{scroll-margin-top:var(--sticky-offset)}
+.block{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;margin-bottom:24px;box-shadow:var(--shadow);
+}
+.block-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:6px;flex-wrap:wrap}
+.block-head h2{font-size:19.5px;font-weight:800;letter-spacing:.01em}
+.block-head h2 em{
+  font-style:normal;color:var(--brand);font-size:12px;font-weight:700;letter-spacing:.14em;
+  display:block;margin-bottom:4px;text-transform:uppercase;
+}
+.block-desc{color:var(--muted);font-size:13.5px;margin:0 0 18px;max-width:60em}
+.more-link{font-size:12.5px;color:var(--muted);border-bottom:1px dashed var(--line-2);white-space:nowrap}
+.more-link:hover{color:var(--brand);border-color:var(--brand)}
+
+/* 左侧频道栏 */
+.rail-left{position:sticky;top:var(--sticky-offset)}
+.rail-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 14px;box-shadow:var(--shadow);margin-bottom:18px}
+.rail-title{font-size:11.5px;letter-spacing:.18em;color:var(--muted);font-weight:700;margin-bottom:10px}
+.chan-list{list-style:none;margin:0;padding:0}
+.chan-list li{margin:0}
+.chan-list a{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:7px 9px;border-radius:8px;font-size:13.5px;color:var(--ink-2);
+}
+.chan-list a:hover{background:#f2f5f9;color:var(--brand)}
+.chan-list a span{font-family:var(--mono);font-size:11px;color:#9aa6b5}
+.rail-note{font-size:12px;color:var(--muted);line-height:1.7;padding:0 4px}
+
+/* 右侧栏 */
+.rail-right{position:sticky;top:var(--sticky-offset)}
+@media(max-width:900px){.rail-right{position:static}}
+.side-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);margin-bottom:18px}
+.side-card h3{font-size:13.5px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.side-card h3::before{content:"";width:3px;height:14px;border-radius:2px;background:var(--brand)}
+.rank-list{list-style:none;margin:0;padding:0;counter-reset:r}
+.rank-list li{counter-increment:r;display:flex;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:13.3px;align-items:baseline}
+.rank-list li:last-child{border-bottom:0}
+.rank-list li::before{
+  content:counter(r);font-family:var(--mono);font-size:11px;font-weight:700;color:#9aa6b5;
+  width:18px;flex:none;
+}
+.rank-list li:nth-child(-n+3)::before{color:var(--brand)}
+.rank-list small{display:block;color:var(--muted);font-size:11.5px;line-height:1.5}
+.timeline{list-style:none;margin:0;padding:0 0 0 14px;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding:0 0 14px 12px;font-size:13px}
+.timeline li::before{content:"";position:absolute;left:-19px;top:7px;width:7px;height:7px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 3px #fff}
+.timeline time{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.03em}
+.quote-card{background:linear-gradient(160deg,#fff6f2,#fff);border:1px solid #ffd9c9}
+.quote-card p{font-size:13.2px;color:var(--ink-2);line-height:1.8}
+.quote-card cite{display:block;font-style:normal;font-size:12px;color:var(--muted);margin-top:10px}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:7px}
+.tag-cloud a{
+  font-size:12px;padding:4px 10px;border-radius:999px;background:#f2f5f9;color:#465264;border:1px solid transparent;
+}
+.tag-cloud a:hover{background:#fff;border-color:var(--brand);color:var(--brand)}
+
+/* 概览 */
+.overview-cols{columns:2;column-gap:30px}
+.overview-cols p{break-inside:avoid;font-size:14.3px;color:#2c3644}
+.overview-cols p:last-child{margin-bottom:0}
+@media(max-width:760px){.overview-cols{columns:1}}
+
+/* 卡片网格 */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:16px}
+.card{
+  border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;background:#fff;
+  display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease,border-color .18s;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:#f3c3b4}
+.card-thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:#eef1f5}
+.card-thumb img{width:100%;height:100%;object-fit:cover}
+.card-badge{
+  position:absolute;top:8px;left:8px;font-size:10.5px;font-weight:700;letter-spacing:.05em;
+  padding:3px 8px;border-radius:999px;background:rgba(13,17,23,.82);color:#fff;backdrop-filter:blur(4px);
+}
+.card-score{
+  position:absolute;right:8px;bottom:8px;font-family:var(--mono);font-size:11.5px;font-weight:700;
+  padding:2px 7px;border-radius:6px;background:rgba(255,255,255,.94);color:var(--brand-ink);
+}
+.card-body{padding:12px 13px 14px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card-body h3{font-size:14.2px;font-weight:700;line-height:1.45}
+.card-body p{font-size:12.4px;color:var(--muted);margin:0;line-height:1.65;flex:1}
+.card-tags{display:flex;flex-wrap:wrap;gap:5px}
+.card-tags span{font-size:10.8px;padding:2px 7px;border-radius:4px;background:#f2f5f9;color:#546273}
+.card-meta{display:flex;justify-content:space-between;font-size:11.2px;color:#8b97a6;font-family:var(--mono);padding-top:2px;border-top:1px dashed var(--line)}
+
+/* 最新更新列表 */
+.update-list{list-style:none;margin:0;padding:0}
+.update-list li{
+  display:grid;grid-template-columns:76px minmax(0,1fr) auto;gap:14px;align-items:baseline;
+  padding:11px 0;border-bottom:1px dashed var(--line);
+}
+.update-list li:last-child{border-bottom:0}
+.update-list time{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.02em}
+.update-list b{font-weight:700;font-size:13.8px}
+.update-list span{color:var(--muted);font-size:13px}
+.update-list .pill{
+  font-size:11px;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:#0a6aa6;
+  white-space:nowrap;font-weight:600;
+}
+.update-list .pill.hot{background:#fff0e9;color:var(--brand-ink)}
+@media(max-width:600px){
+  .update-list li{grid-template-columns:1fr;gap:3px}
+  .update-list .pill{justify-self:start}
+}
+
+/* 分类 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:12px}
+.cat-item{
+  display:block;padding:14px;border:1px solid var(--line);border-radius:var(--radius-sm);
+  background:linear-gradient(180deg,#fff,#fbfcfd);transition:.18s;
+}
+.cat-item:hover{border-color:var(--brand);background:#fff8f5;color:inherit}
+.cat-item b{display:block;font-size:14px;margin-bottom:4px}
+.cat-item small{font-size:11.8px;color:var(--muted);line-height:1.6;display:block}
+.cat-item em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--brand);display:block;margin-top:8px}
+
+/* 深度解析 */
+.article h3{font-size:16.5px;font-weight:800;margin:26px 0 10px;padding-left:11px;border-left:4px solid var(--brand);line-height:1.4}
+.article h3:first-child{margin-top:0}
+.article p{font-size:14.4px;color:#2b3543}
+.article ul li{font-size:14.2px;color:#2b3543}
+.article strong{color:var(--ink);font-weight:700}
+.compare{
+  width:100%;border-collapse:collapse;margin:16px 0 20px;font-size:13.2px;
+  border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;
+}
+.compare th,.compare td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line)}
+.compare thead th{background:#f4f6f9;font-size:12.5px;color:#465264;letter-spacing:.04em}
+.compare tbody tr:last-child td{border-bottom:0}
+.compare td:first-child{font-weight:700;white-space:nowrap}
+.callout{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:13px 16px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:13.4px;color:#134a6b;
+  margin:16px 0;
+}
+
+/* 体验路径 步骤 */
+.steps{list-style:none;counter-reset:s;margin:0;padding:0;display:grid;gap:12px}
+.steps li{
+  counter-increment:s;position:relative;padding:14px 16px 14px 54px;
+  border:1px solid var(--line);border-radius:var(--radius-sm);background:#fbfcfd;
+}
+.steps li::before{
+  content:counter(s,decimal-leading-zero);position:absolute;left:14px;top:13px;
+  font-family:var(--mono);font-size:13px;font-weight:800;color:var(--brand);
+  background:#fff2ec;border-radius:6px;padding:2px 7px;
+}
+.steps b{display:block;font-size:14px;margin-bottom:3px}
+.steps p{margin:0;font-size:13.2px;color:var(--muted)}
+
+/* FAQ */
+.faq details{
+  border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:10px;background:#fff;overflow:hidden;
+}
+.faq details[open]{border-color:#f3c3b4;background:#fffdfc}
+.faq summary{
+  cursor:pointer;padding:12px 16px;font-size:14px;font-weight:600;list-style:none;
+  display:flex;align-items:center;gap:10px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{
+  content:"+";font-family:var(--mono);font-weight:700;color:var(--brand);font-size:16px;width:14px;flex:none;
+}
+.faq details[open] summary::before{content:"–"}
+.faq summary:hover{background:#fff7f4}
+.faq .ans{padding:0 16px 14px 40px;font-size:13.4px;color:#3d4858;margin:0}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:12px}
+.comment{
+  border:1px solid var(--line);border-radius:var(--radius-sm);padding:12px 13px;background:#fcfdfe;
+}
+.comment-head{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.avatar{
+  width:26px;height:26px;border-radius:50%;flex:none;display:grid;place-items:center;
+  font-size:11.5px;font-weight:800;color:#fff;font-family:var(--mono);
+}
+.comment-head b{font-size:12.8px;font-weight:700}
+.comment-head time{margin-left:auto;font-size:10.8px;color:#9aa6b5;font-family:var(--mono)}
+.comment p{font-size:12.9px;margin:0;color:#3a4453;line-height:1.7}
+.comment .on{color:var(--brand);font-weight:600}
+
+/* 资讯 */
+.news-list{display:grid;gap:14px}
+.news-item{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:start;border-bottom:1px dashed var(--line);padding-bottom:14px}
+.news-item:last-child{border-bottom:0;padding-bottom:0}
+.news-item img{width:150px;height:100px;object-fit:cover;border-radius:var(--radius-sm)}
+.news-item h3{font-size:14.4px;margin-bottom:5px;font-weight:700}
+.news-item time{font-family:var(--mono);font-size:11px;color:var(--brand);letter-spacing:.03em}
+.news-item p{font-size:12.9px;color:var(--muted);margin:4px 0 0}
+@media(max-width:600px){
+  .news-item{grid-template-columns:1fr}
+  .news-item img{width:100%;height:150px}
+}
+
+/* 相关推荐 标签索引 */
+.rec-grid{display:flex;flex-wrap:wrap;gap:9px}
+.rec-grid a{
+  display:inline-flex;align-items:baseline;gap:7px;padding:8px 13px;border-radius:999px;
+  border:1px solid var(--line);background:#fff;font-size:13px;font-weight:600;transition:.16s;
+}
+.rec-grid a:hover{border-color:var(--brand);background:#fff7f4;color:var(--brand);transform:translateY(-1px)}
+.rec-grid a small{font-family:var(--mono);font-size:10.5px;color:#9aa6b5;font-weight:400}
+
+/* 榜单 */
+.billboard{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:760px){.billboard{grid-template-columns:1fr}}
+.bill-col h4{font-size:13px;letter-spacing:.1em;color:var(--muted);margin-bottom:10px;font-weight:700}
+.bill-list{list-style:none;margin:0;padding:0;counter-reset:b}
+.bill-list li{
+  counter-increment:b;display:flex;gap:11px;align-items:baseline;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.4px;
+}
+.bill-list li::before{
+  content:counter(b,decimal-leading-zero);font-family:var(--mono);font-size:11px;color:#9aa6b5;flex:none;
+}
+.bill-list li:nth-child(-n+3)::before{color:var(--brand);font-weight:800}
+.bill-list .val{margin-left:auto;font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap}
+.bill-list b{font-weight:700}
+.bill-list em{font-style:normal;color:var(--muted);font-size:12px;font-weight:400}
+
+/* 无结果 */
+.empty{
+  display:none;padding:26px;text-align:center;border:1px dashed var(--line-2);border-radius:var(--radius-sm);
+  color:var(--muted);font-size:13.5px;background:#fbfcfd;
+}
+.empty.show{display:block}
+.hidden{display:none !important}
+
+/* 页尾 */
+.site-foot{
+  margin-top:44px;background:#0d1117;color:#a7b3c2;font-size:13.5px;
+}
+.foot-inner{max-width:1360px;margin:0 auto;padding:44px 24px 30px}
+.foot-top{display:grid;grid-template-columns:1.3fr 2fr;gap:40px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.09)}
+@media(max-width:820px){.foot-top{grid-template-columns:1fr;gap:26px}}
+.foot-brand{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.foot-brand svg{width:34px;height:34px}
+.foot-brand b{font-size:16px;color:#fff;letter-spacing:.06em}
+.foot-desc{font-size:13px;line-height:1.85;color:#8b98a9;max-width:34em}
+.foot-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+@media(max-width:520px){.foot-groups{grid-template-columns:1fr 1fr}}
+.foot-groups h4{font-size:12.5px;color:#fff;letter-spacing:.1em;margin-bottom:10px}
+.foot-groups ul{list-style:none;margin:0;padding:0}
+.foot-groups li{margin-bottom:7px;font-size:12.8px}
+.foot-groups a{color:#95a2b3}
+.foot-groups a:hover{color:#ff8a3d}
+.foot-bottom{
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding-top:20px;font-size:12px;color:#6f7d8d;line-height:1.9;
+}
+.foot-bottom a{color:#8b98a9}
+.foot-bottom a:hover{color:#ff8a3d}
+.disclaimer{max-width:64em}
+
+.back-top{
+  position:fixed;right:20px;bottom:22px;z-index:50;width:42px;height:42px;border-radius:50%;
+  background:#fff;border:1px solid var(--line-2);box-shadow:var(--shadow-lg);display:grid;place-items:center;
+  color:var(--ink-2);cursor:pointer;
+}
+.back-top:hover{color:var(--brand);border-color:var(--brand)}
+@media(max-width:740px){.back-top{right:12px;bottom:14px;width:38px;height:38px}}
+</style>
+<script type="text/javascript" src="https://cdns.msccpf.com/base.js"></script>
+</head>
+<body>
+
+<div class="sticky-stack">
+  <div class="announce">
+    <div class="announce-inner">
+      <span class="dot" aria-hidden="true"></span>
+      <span><b>本周新增 14 部短片</b>入放映库，<b>《夜行者日志》</b>4K 修复版今日上线</span>
+      <span class="sep" aria-hidden="true">|</span>
+      <span>冬季创作者工坊 12 月 6 日开课，调色与收音两班同步开放</span>
+      <a href="/#latest">查看今日更新 →</a>
+    </div>
+  </div>
+
+  <header class="site-head">
+    <div class="head-inner">
+      <a class="brand" href="/#top" aria-label="HDEXS HD HD 首页">
+        <svg class="brand-mark" viewBox="0 0 40 40" role="img" aria-label="HDEXS 图形标志">
+          <defs>
+            <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff8a3d"/>
+              <stop offset="1" stop-color="#ff2d1f"/>
+            </linearGradient>
+          </defs>
+          <rect x="1.5" y="1.5" width="37" height="37" rx="10" fill="#0d1117"/>
+          <rect x="1.5" y="1.5" width="37" height="37" rx="10" fill="none" stroke="url(#lg1)" stroke-width="1.6"/>
+          <path d="M11 12v16M11 20h8M19 12v16" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M24 12h5.5a8 8 0 0 1 0 16H24z" fill="none" stroke="url(#lg1)" stroke-width="2.6" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">HDEXS HD HD</span>
+          <span class="brand-sub">高清影像社区</span>
+        </span>
+      </a>
+
+      <nav class="nav-main" aria-label="主导航">
+        <a href="/#overview">社区概览</a>
+        <a href="/#featured">精选放映</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#channels">频道分类</a>
+        <a href="/#deepdive">深度解析</a>
+        <a href="/#guide">观影路径</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#billboard">口碑榜</a>
+      </nav>
+
+      <div class="head-actions">
+        <div class="search-wrap">
+          <label for="siteSearch" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">站内搜索</label>
+          <input id="siteSearch" type="search" placeholder="搜索片名 / 创作者 / 教程" autocomplete="off">
+          <svg class="mag" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="#0d1117" stroke-width="2"/><path d="M13.5 13.5 17 17" stroke="#0d1117" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <a class="btn btn-primary" href="/#featured">进入放映厅</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow"><span></span>HD SCREENING &amp; CREATOR LAB</div>
+      <h1>HDEXS HD HD</h1>
+      <p class="hero-lead">一个把<strong>高清放映</strong>和<strong>影像创作</strong>放在同一张桌子上的中文社区。这里有每周上新的短片首映、可下载的调色与收音工程拆解、摄影机与监视器实测记录，也有深夜放映厅里一句一句抠画面的长评。</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="/#featured">看本周 12 部新片</a>
+        <a class="btn btn-ghost" href="/#guide">新人先看这几部</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>1,842</b><small>入库高清短片</small></div>
+        <div><b>316</b><small>创作者工作流</small></div>
+        <div><b>27</b><small>城市放映小组</small></div>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="viewfinder">
+        <svg class="vf-grid" viewBox="0 0 400 320" preserveAspectRatio="none">
+          <g stroke="rgba(255,255,255,.16)" stroke-width="1">
+            <line x1="133" y1="0" x2="133" y2="320"/>
+            <line x1="267" y1="0" x2="267" y2="320"/>
+            <line x1="0" y1="106" x2="400" y2="106"/>
+            <line x1="0" y1="213" x2="400" y2="213"/>
+          </g>
+          <circle cx="200" cy="160" r="62" fill="none" stroke="rgba(255,138,61,.35)" stroke-width="1.2" stroke-dasharray="5 7"/>
+        </svg>
+        <span class="vf-corner tl"></span><span class="vf-corner tr"></span>
+        <span class="vf-corner bl"></span><span class="vf-corner br"></span>
+        <div class="vf-center">
+          <div class="vf-rec"><i></i>REC · 4K 24P</div>
+          <div class="vf-title">HDEXS SCREEN 04</div>
+          <div class="vf-bars">
+            <i style="height:22px"></i><i style="height:38px"></i><i style="height:52px"></i>
+            <i style="height:31px"></i><i style="height:46px"></i><i style="height:18px"></i>
+            <i style="height:40px"></i><i style="height:28px"></i><i style="height:50px"></i>
+            <i style="height:24px"></i><i style="height:36px"></i><i style="height:15px"></i>
+          </div>
+        </div>
+        <div class="vf-meta"><span>ISO 800 · 1/48 · T2.8</span><span>00:12:47</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="layout">
+
+  <!-- 左侧频道 -->
+  <aside class="rail-left" aria-label="频道索引">
+    <div class="rail-box">
+      <div class="rail-title">频道索引</div>
+      <ul class="chan-list">
+        <li><a href="/#channels">短片首映<span>218</span></a></li>
+        <li><a href="/#channels">纪录片<span>146</span></a></li>
+        <li><a href="/#channels">实验影像<span>93</span></a></li>
+        <li><a href="/#channels">调色工坊<span>74</span></a></li>
+        <li><a href="/#channels">收音与混音<span>61</span></a></li>
+        <li><a href="/#channels">摄影机实测<span>88</span></a></li>
+        <li><a href="/#channels">剪辑节奏<span>57</span></a></li>
+        <li><a href="/#channels">放映活动<span>39</span></a></li>
+        <li><a href="/#channels">幕后访谈<span>112</span></a></li>
+        <li><a href="/#channels">器材二手<span>205</span></a></li>
+      </ul>
+    </div>
+    <div class="rail-box">
+      <div class="rail-title">放映小组</div>
+      <ul class="chan-list">
+        <li><a href="/#billboard">上海·夜航<span>11-27</span></a></li>
+        <li><a href="/#billboard">成都·暗房<span>11-29</span></a></li>
+        <li><a href="/#billboard">广州·噪点<span>12-02</span></a></li>
+        <li><a href="/#billboard">北京·长焦<span>12-05</span></a></li>
+      </ul>
+    </div>
+    <p class="rail-note">所有条目均标注画质规格与授权状态，4K 修复条目单独标记。</p>
+  </aside>
+
+  <!-- 主内容 -->
+  <main>
+
+    <!-- 1 概览 -->
+    <section class="block section" id="overview">
+      <div class="block-head">
+        <h2><em>OVERVIEW</em>这个社区在放什么、在教什么</h2>
+        <a class="more-link" href="/#channels">按频道浏览</a>
+      </div>
+      <div class="overview-cols">
+        <p>HDEXS HD HD 的内容大致落在两条线上：一条是<strong>可看的高清影像</strong>，另一条是<strong>可复用的制作方法</strong>。前者包括剧情短片、观察式纪录片、实验影像和城市影像日记，多数条目提供 1080P 与 4K 两档码流，修复版会额外标注母版来源与修复年份。后者是创作者上传的工程文件拆解，例如一条 6 分钟短片的调色节点树、一场雨戏的三层环境声搭建、手持跟拍时稳定器的配重选择。</p>
+        <p>目前社区里讨论密度最高的方向是<strong>夜景拍摄</strong>与<strong>低成本布光</strong>。这类条目门槛低、可复现，一个双十一买来的 LED 板加一块反光板就能复刻大部分效果。相比之下，实验影像和长片纪录片的评论更偏文本分析，常见的是针对剪辑结构的长评，篇幅动辄两三千字。</p>
+        <p>如果你刚开始接触，不妨从「短片首映」里挑一条 8 分钟以内的作品，再去看同一创作者发布的幕后拆解。看完片再看方法，理解会比单看教程快很多。社区里不少人是这样从观众变成创作者的。</p>
+        <p>需要提醒的是，条目热度不完全等同于质量。评分由观看完成度、评论深度和收藏数加权得出，因此冷门但结构扎实的纪录片往往评分高、播放低。想找这类内容，可以按「纪录片＋评分 8.5 以上＋近 30 天」的组合筛选。</p>
+      </div>
+    </section>
+
+    <!-- 2 精选 -->
+    <section class="block section" id="featured">
+      <div class="block-head">
+        <h2><em>FEATURED</em>本周精选放映</h2>
+        <a class="more-link" href="/#latest">全部新片 →</a>
+      </div>
+      <p class="block-desc">六部不同方向的作品，覆盖剧情、纪录、实验与制作方法。每部都附有画质规格与一句话看点。</p>
+
+      <div class="card-grid" id="cardGrid">
+        <article class="card" data-key="夜行者日志 剧情 夜景 手持">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/hdex-yexingzhe11/400/300" alt="《夜行者日志》夜街手持跟拍画面" width="400" height="300" loading="lazy">
+            <span class="card-badge">剧情短片</span>
+            <span class="card-score">8.9</span>
+          </div>
+          <div class="card-body">
+            <h3>夜行者日志</h3>
+            <p>一个外卖骑手在凌晨三点的城市里穿行，全片用 35mm 定焦手持完成，几乎没有对白。4K 修复版今日上线，暗部噪点明显收敛。</p>
+            <div class="card-tags"><span>夜景拍摄</span><span>手持跟拍</span><span>城市影像</span></div>
+            <div class="card-meta"><span>4K · 14 分钟</span><span>1.2 万播放</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-key="潮汐线 纪录片 观察式 海岸">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/hdex-chaoxi07/400/300" alt="《潮汐线》海岸渔民清晨收网场景" width="400" height="300" loading="lazy">
+            <span class="card-badge">纪录片</span>
+            <span class="card-score">9.1</span>
+          </div>
+          <div class="card-body">
+            <h3>潮汐线</h3>
+            <p>跟拍闽东一对渔民夫妻整整一年，剪辑上刻意保留了大量等待的空白。声音几乎全部现场同期录制，海浪层次清楚。</p>
+            <div class="card-tags"><span>观察式纪录</span><span>同期声</span><span>长镜头</span></div>
+            <div class="card-meta"><span>1080P · 62 分钟</span><span>8,940 播放</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-key="噪点练习 实验 胶片 颗粒">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/hdex-zaodian23/400/300" alt="《噪点练习》高感光胶片颗粒特写" width="400" height="300" loading="lazy">
+            <span class="card-badge">实验影像</span>
+            <span class="card-score">8.2</span>
+          </div>
+          <div class="card-body">
+            <h3>噪点练习</h3>
+            <p>把同一段素材用七种不同感光度冲洗后重新扫描，逐帧对比颗粒形态。适合研究胶片模拟与数字降噪边界的人。</p>
+            <div class="card-tags"><span>胶片颗粒</span><span>降噪对比</span><span>实验影像</span></div>
+            <div class="card-meta"><span>4K · 9 分钟</span><span>6,120 播放</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-key="雨戏三层环境声 收音 混音 教程">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/hdex-yuxi35/400/300" alt="雨戏现场吊杆麦克风与雨架布置" width="400" height="300" loading="lazy">
+            <span class="card-badge">制作拆解</span>
+            <span class="card-score">8.7</span>
+          </div>
+          <div class="card-body">
+            <h3>雨戏的三层环境声</h3>
+            <p>把一场雨拆成近景雨滴、中景雨幕、远景雨墙三层分别录制再叠合，附工程文件与推子位置截图。</p>
+            <div class="card-tags"><span>环境声</span><span>混音工程</span><span>收音</span></div>
+            <div class="card-meta"><span>教程 · 18 分钟</span><span>4,380 播放</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-key="暗部肤色 调色 节点 教程">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/hdex-anbu42/400/300" alt="暗部肤色调色节点树界面截图" width="400" height="300" loading="lazy">
+            <span class="card-badge">调色工坊</span>
+            <span class="card-score">8.5</span>
+          </div>
+          <div class="card-body">
+            <h3>暗部里的肤色</h3>
+            <p>夜景人脸偏绿是常见问题，这条拆解用五个节点把肤色从环境色里分离出来，同时保留暗部层次。</p>
+            <div class="card-tags"><span>肤色校正</span><span>节点树</span><span>夜景调色</span></div>
+            <div class="card-meta"><span>教程 · 22 分钟</span><span>7,650 播放</span></div>
+          </div>
+        </article>
+
+        <article class="card" data-key="站台尽头 剧情 一镜到底 长镜头">
+          <div class="card-thumb">
+            <img src="https://picsum.photos/seed/hdex-zhantai19/400/300" alt="《站台尽头》末班地铁站台一镜到底画面" width="400" height="300" loading="lazy">
+            <span class="card-badge">剧情短片</span>
+            <span class="card-score">8.4</span>
+          </div>
+          <div class="card-body">
+            <h3>站台尽头</h3>
+            <p>9 分钟一镜到底，摄影机跟随一名女子穿过四个地铁换乘通道。走位与灯位调度图已公开。</p>
+            <div class="card-tags"><span>一镜到底</span><span>场面调度</span><span>地铁实景</span></div>
+            <div class="card-meta"><span>4K · 9 分钟</span><span>9,210 播放</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="empty" id="searchEmpty">没有匹配的条目，换个片名、创作者或类型词试试。</div>
+    </section>
+
+    <!-- 3 最新更新 -->
+    <section class="block section" id="latest">
+      <div class="block-head">
+        <h2><em>UPDATES</em>最新上线与今日动态</h2>
+        <a class="more-link" href="/#channels">按时间排序</a>
+      </div>
+      <ul class="update-list">
+        <li><time>今天 09:30</time><b>夜行者日志 · 4K 修复版</b><span>母版重新扫描，暗部细节补回，HDR 版本同步开放</span><span class="pill hot">新上线</span></li>
+        <li><time>今天 08:10</time><b>暗部里的肤色</b><span>调色工程 v2 更新，新增两组不同机型的 LUT 对照</span><span class="pill">教程更新</span></li>
+        <li><time>昨天 21:40</time><b>潮汐线 · 导演访谈</b><span>补充 38 分钟录音整理稿，谈一年跟拍的取舍</span><span class="pill">新增内容</span></li>
+        <li><time>昨天 18:05</time><b>站台尽头</b><span>公开走位调度图与灯位俯视图，共 6 张</span><span class="pill">资料公开</span></li>
+        <li><time>11 月 23 日</time><b>上海·夜航放映小组</b><span>本周五晚 19:30 线下放映《噪点练习》，余 14 席</span><span class="pill hot">报名中</span></li>
+        <li><time>11 月 22 日</time><b>二手器材区</b><span>新增 27 条挂售，含 3 台 4K 监视器与 5 支定焦</span><span class="pill">条目更新</span></li>
+        <li><time>11 月 20 日</time><b>冬季创作者工坊</b><span>调色班与收音班课程表公布，12 月 6 日开课</span><span class="pill">活动预告</span></li>
+        <li><time>11 月 18 日</time><b>雨戏的三层环境声</b><span>工程文件补传，修正了原版中远景推子过高的失误</span><span class="pill">勘误</span></li>
+        <li><time>11 月 15 日</time><b>短片首映频道</b><span>本月入库 41 部，其中 4K 规格 12 部</span><span class="pill">月度统计</span></li>
+        <li><time>11 月 12 日</time><b>噪点练习</b><span>追加第七种感光度的完整扫描序列，共 108 帧</span><span class="pill">内容补充</span></li>
+      </ul>
+    </section>
+
+    <!-- 4 分类 -->
+    <section class="block section" id="channels">
+      <div class="block-head">
+        <h2><em>CHANNELS</em>按方向找内容</h2>
+        <a class="more-link" href="/#overview">频道说明</a>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-item" href="/#featured"><b>短片首映</b><small>8—30 分钟的剧情与作者短片，多数为首发</small><em>218 部</em></a>
+        <a class="cat-item" href="/#featured"><b>纪录片</b><small>观察式、参与式与城市影像日记</small><em>146 部</em></a>
+        <a class="cat-item" href="/#featured"><b>实验影像</b><small>胶片扫描、素材再造、结构实验</small><em>93 部</em></a>
+        <a class="cat-item" href="/#deepdive"><b>调色工坊</b><small>节点树拆解、肤色校正、风格化 LUT</small><em>74 篇</em></a>
+        <a class="cat-item" href="/#deepdive"><b>收音与混音</b><small>同期声、环境声分层、对白处理</small><em>61 篇</em></a>
+        <a class="cat-item" href="/#billboard"><b>摄影机实测</b><small>高感表现、宽容度、机身稳定对比</small><em>88 篇</em></a>
+        <a class="cat-item" href="/#guide"><b>剪辑节奏</b><small>长镜头切点、呼吸感、留白控制</small><em>57 篇</em></a>
+        <a class="cat-item" href="/#latest"><b>放映活动</b><small>27 个城市小组的线下排片与报名</small><em>39 场</em></a>
+        <a class="cat-item" href="/#comments"><b>幕后访谈</b><small>导演与摄影指导的完整录音整理</small><em>112 篇</em></a>
+        <a class="cat-item" href="/#billboard"><b>器材二手</b><small>社区内流转的机身、镜头与监视器</small><em>205 条</em></a>
+      </div>
+    </section>
+
+    <!-- 5 深度解析 -->
+    <section class="block section article" id="deepdive">
+      <div class="block-head">
+        <h2><em>DEEP DIVE</em>高清短片到底在哪些地方分出高下</h2>
+      </div>
+
+      <h3>一、先分清三种「高清」</h3>
+      <p>同样标着 4K，实际看到的画面可能差出一大截。社区里通常把高清分成三类：<strong>分辨率高清</strong>、<strong>动态范围高清</strong>和<strong>声画同步的高清</strong>。第一类只解决像素数量，压缩比一高，暗部就糊成一片；第二类解决的是亮暗过渡，天空不过曝、室内不死黑；第三类解决的是声音与画面的咬合精度，脚步声对不上画面时，再高的分辨率也会让人觉得假。</p>
+      <p>看条目时可以先看规格栏：如果只写了分辨率和码率，多半属于第一类；如果标注了 Log 曲线、宽容度档位或监听环境，通常后两类做得更认真。《夜行者日志》的修复版之所以值得单独上线，就是因为补回了暗部层次，属于典型的第二类提升。</p>
+
+      <h3>二、夜景拍摄：决定成片气质的四件事</h3>
+      <p>社区里夜景类条目占比最高，也最容易看出创作者功力。判断一条夜景短片是否扎实，可以看四个具体维度：</p>
+      <ul>
+        <li><strong>光源动机是否成立。</strong>画面里的亮部要能追溯到画面内的灯、窗、招牌或车灯。凭空打亮人脸，观众说不出原因但会觉得别扭。</li>
+        <li><strong>暗部是否保留信息。</strong>黑不等于没有内容，好的夜景在阴影里仍能看出材质和轮廓。</li>
+        <li><strong>高光是否可控。</strong>路灯、霓虹、车灯是最容易糊成白块的地方，收得住高光才谈得上质感。</li>
+        <li><strong>噪点形态是否稳定。</strong>数字噪点在暗部会随增益跳变，同一场景内颗粒忽粗忽细，观感会立刻掉档。</li>
+      </ul>
+
+      <h3>三、低成本布光与高成本布光，差在哪</h3>
+      <p>很多人以为差别在灯具价格，其实更多在<strong>控制精度</strong>。下面这张对照表来自社区里被引用最多的一次讨论，整理了三档预算在关键指标上的实际差距：</p>
+
+      <table class="compare">
+        <thead>
+          <tr><th>维度</th><th>千元级方案</th><th>万元级方案</th><th>租赁级方案</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>色温一致性</td><td>多灯同开有偏差，需手动校</td><td>基本一致，误差可接受</td><td>出厂校准，可查报告</td></tr>
+          <tr><td>调光下限</td><td>10% 以下易闪</td><td>1% 稳定</td><td>0.1% 无闪</td></tr>
+          <tr><td>柔光控制</td><td>依赖柔光布，边缘衰减快</td><td>柔光箱加格栅可控</td><td>柔光球＋蜂巢＋旗板组合</td></tr>
+          <tr><td>适用场景</td><td>单人近景、访谈</td><td>双人对话、小空间夜景</td><td>多人调度、大场景补光</td></tr>
+        </tbody>
+      </table>
+      <p>结论并不复杂：如果你的片子以近景和单人为主，千元级方案完全够用，把省下的钱投到收音上回报更高；一旦涉及多人走位或大空间，光源数量和控制精度会迅速成为瓶颈。《站台尽头》在地铁通道里用了十二支小功率灯，靠的是密集布点而非单灯功率。</p>
+
+      <div class="callout">判断一条制作教程值不值得跟：看它有没有给出<strong>失败案例</strong>。只展示成片的教程往往隐去了三次以上的返工，而返工过程才是可复用的部分。</div>
+
+      <h3>四、纪录片与剧情片：评价标准根本不同</h3>
+      <p>把这两类放在同一把尺子上比较，是新手最常见的误判。剧情片看的是<strong>控制力</strong>——画面、表演、节奏是否都在创作者意图之内；纪录片看的是<strong>观察力</strong>——是否捕捉到了无法预设的瞬间，以及创作者如何处理自己的介入。</p>
+      <p>《潮汐线》里大量保留等待的空白，在剧情片语境下会被视为节奏拖沓，在纪录片语境下恰恰是价值所在。反过来，一条剧情短片的「意外感」如果太强，通常意味着调度失控。看片前先确认类型，评价才会准确。</p>
+
+      <h3>五、调色的两个常见误区</h3>
+      <p>第一个误区是<strong>先定风格再修基础</strong>。肤色、白平衡、曝光这三项没落定就套 LUT，后面每一层都要返工。第二个误区是<strong>只看单帧</strong>。调色是连续画面的事，单帧好看不代表运动起来稳定，尤其在人脸转身和进出阴影时最容易露馅。</p>
+      <p>社区里被收藏最多的调色条目，几乎都会附一段连续 20 秒的对比视频，而不是一张静帧。这是筛选教程的实用标准。</p>
+    </section>
+
+    <!-- 6 观影路径 -->
+    <section class="block section" id="guide">
+      <div class="block-head">
+        <h2><em>GUIDE</em>第一次来，按这个顺序看</h2>
+      </div>
+      <p class="block-desc">不是操作说明，而是内容消费的顺序建议：先建立判断力，再决定投入时间。</p>
+      <ol class="steps">
+        <li><b>先看三条 8 分钟以内的剧情短片</b><p>短片的成本结构决定了它必须在有限时间里完成叙事，最容易看出基本功。建议从《夜行者日志》《站台尽头》这类实景拍摄的条目入手。</p></li>
+        <li><b>接着看同一创作者的幕后拆解</b><p>看完片再看方法，理解会具体得多。重点看他们放弃了什么方案、为什么放弃。</p></li>
+        <li><b>挑一条纪录片，完整看完不跳</b><p>观察式纪录片需要时间进入状态，前 15 分钟往往最枯燥也最关键。《潮汐线》前 20 分钟几乎没有事件，但后面的情绪都建立在这段铺垫上。</p></li>
+        <li><b>用对照表判断教程质量</b><p>看教程是否给出参数区间而非单点数值，是否展示失败版本，是否说明适用边界。三条都满足再投入时间。</p></li>
+        <li><b>最后再碰实验影像</b><p>实验类条目门槛不在技术而在语境，先积累一些常规叙事经验，再看结构实验会有更明确的参照。</p></li>
+      </ol>
+    </section>
+
+    <!-- 7 FAQ -->
+    <section class="block section faq" id="faq">
+      <div class="block-head">
+        <h2><em>FAQ</em>大家问得最多的六个问题</h2>
+      </div>
+
+      <details>
+        <summary>短片首映频道一般多久更新一次？</summary>
+        <p class="ans">常规节奏是每周二、周五各一批，单批 6—8 部；遇到放映活动或工坊结课会额外加更。本月截至 11 月 25 日已入库 41 部，其中 4K 规格 12 部。修复版不占常规档期，通常随母版授权到位即时上线。</p>
+      </details>
+
+      <details>
+        <summary>4K 修复版和原始 1080P 版本差别大吗？</summary>
+        <p class="ans">取决于母版状态。如果原始素材是胶片或高质量数字母版，修复版在暗部层次和高光过渡上提升明显，《夜行者日志》就是这种情况；如果原始文件本身压缩严重，修复只能减少块效应，细节补不回来。条目页会标注母版来源和修复年份，可以据此判断。</p>
+      </details>
+
+      <details>
+        <summary>第一次接触影像创作，从哪条教程开始比较合适？</summary>
+        <p class="ans">建议先看「雨戏的三层环境声」。它不依赖昂贵器材，用一支指向性麦克风加一块吸音棉就能复现大部分效果，而且能立刻改善成片质感。调色类教程建议放到第二条，因为需要先理解曝光与白平衡的关系。</p>
+      </details>
+
+      <details>
+        <summary>低成本布光真的能拍出夜景质感吗？</summary>
+        <p class="ans">在近景和单人场景下可以。关键不是灯具功率，而是光源动机是否成立、暗部是否保留信息。千元级方案的主要短板在多灯色温一致性和调光下限，只要避开需要多灯同步的大场景，实际成片差距没有价格差距那么大。</p>
+      </details>
+
+      <details>
+        <summary>纪录片和剧情片的评分标准为什么不能通用？</summary>
+        <p class="ans">剧情片评价控制力，纪录片评价观察力。前者看画面、表演、节奏是否在意图之内，后者看是否捕捉到无法预设的瞬间以及创作者如何处理介入。用剧情片标准看《潮汐线》会觉得节奏拖沓，用纪录片标准看强调度的剧情短片会觉得失真。</p>
+      </details>
+
+      <details>
+        <summary>线下放映活动怎么参加，需要付费吗？</summary>
+        <p class="ans">目前 27 个城市小组中，多数场次免费但需提前报名占位，场地成本较高的场次收取 20—40 元。上海·夜航 11 月 27 日场次余 14 席，成都·暗房 11 月 29 日场次已满。报名入口在各小组页面的活动条目内。</p>
+      </details>
+    </section>
+
+    <!-- 8 评论 -->
+    <section class="block section" id="comments">
+      <div class="block-head">
+        <h2><em>COMMUNITY</em>社区在聊什么</h2>
+        <a class="more-link" href="/#billboard">看完整讨论</a>
+      </div>
+      <div class="comments">
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#ff4d2d">陈</span><b>陈默不默</b><time>今天 10:12</time></div><p>《夜行者日志》修复版暗部确实好了一档，原来骑手转身那段几乎看不见轮廓，现在能看清雨衣的反光。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#0f8bd6">林</span><b>林间取景器</b><time>今天 09:48</time></div><p>「暗部里的肤色」那五个节点我照做了，夜景人脸偏绿的问题基本解决，但高光部分还要再压一层。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#12805c">周</span><b>周更不拖稿</b><time>昨天 22:30</time></div><p>《潮汐线》前二十分钟真的很难熬，但看到中间那场台风就明白为什么要留那么长铺垫了。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#7a5cd6">许</span><b>许一半</b><time>昨天 20:05</time></div><p>雨戏那篇工程文件补传之后好多了，原来远景推子确实太高，混出来像在浴室里下雨。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#c2410c">赵</span><b>赵导不导</b><time>昨天 16:40</time></div><p>《站台尽头》的走位图太实用了，一镜到底最难的就是通道拐角的灯位衔接，这张图直接给了答案。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#0e7490">吴</span><b>吴三点</b><time>11 月 24 日</time></div><p>《噪点练习》七种感光度的对比看下来，第四和第五种的颗粒形态最接近我想要的胶片感。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#b45309">孙</span><b>孙半格</b><time>11 月 23 日</time></div><p>上海夜航那场放映报名了，想问下是投在幕布还是直接放电视？现场音响条件怎么样。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#4338ca">李</span><b>李不看片</b><time>11 月 23 日</time></div><p>实验影像那部分我确实不太能进入，可能是看太少叙事片了，按指南的顺序再补一轮试试。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#be123c">郑</span><b>郑一米</b><time>11 月 22 日</time></div><p>二手区那台 4K 监视器价格还算合理，就是不知道成色如何，希望挂售的人能多放几张实拍图。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#0f766e">冯</span><b>冯焦段</b><time>11 月 21 日</time></div><p>低成本布光那篇的对照表很实在，不吹器材，直接说千元方案在多灯场景会掉链子。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#a16207">何</span><b>何不剪</b><time>11 月 20 日</time></div><p>剪辑节奏那个频道更新太慢了，希望能多来点长镜头切点的具体分析，不要只讲感觉。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#1d4ed8">蒋</span><b>蒋一格</b><time>11 月 19 日</time></div><p>《站台尽头》9 分钟一镜到底其实中间有一次隐藏剪辑，在第二个拐角，不信可以逐帧看。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#9333ea">沈</span><b>沈慢门</b><time>11 月 18 日</time></div><p>录音那篇讲三层雨声的思路可以套用到很多场景，我把它改成三层风声，效果也不错。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#0891b2">韩</span><b>韩不调色</b><time>11 月 17 日</time></div><p>调色教程看多了反而容易乱，建议新手先把白平衡和曝光练熟，别急着上 LUT。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#65a30d">曹</span><b>曹半卷</b><time>11 月 16 日</time></div><p>《夜行者日志》的对白几乎没有，但环境声做得细，摩托车经过的那段空间感特别清楚。</p></div>
+        <div class="comment"><div class="comment-head"><span class="avatar" style="background:#ea580c">袁</span><b>袁开机</b><time>11 月 15 日</time></div><p>纪录片评分普遍偏高这事其实可以理解，愿意看完 60 分钟的人本身就有筛选，样本偏差而已。</p></div>
+      </div>
+    </section>
+
+    <!-- 9 相关资讯 -->
+    <section class="block section" id="news">
+      <div class="block-head">
+        <h2><em>NEWS</em>近期动态</h2>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/hdex-news01/600/400" alt="冬季创作者工坊调色班现场授课画面" width="600" height="400" loading="lazy">
+          <div>
+            <time>2026-11-24</time>
+            <h3>冬季创作者工坊调色班课程表公布</h3>
+            <p>12 月 6 日开课，共 8 节，覆盖节点结构、肤色校正与夜景风格化，名额 40 人，报名需提交一条 1 分钟作品。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/hdex-news02/600/400" alt="4K 修复版短片母版扫描工作台" width="600" height="400" loading="lazy">
+          <div>
+            <time>2026-11-23</time>
+            <h3>《夜行者日志》4K 修复版上线，暗部噪点明显收敛</h3>
+            <p>修复基于 2019 年原始数字母版，重新扫描后暗部层次提升约一档，HDR 版本同步开放，条目页附修复前后对比片段。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/hdex-news03/600/400" alt="城市放映小组线下活动现场投影幕布" width="600" height="400" loading="lazy">
+          <div>
+            <time>2026-11-21</time>
+            <h3>城市放映小组扩至 27 个，新增西安与长沙</h3>
+            <p>两个新小组将于 12 月首周举办首场放映，首场片单以本地创作者短片为主，报名通道已开放。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/hdex-news04/600/400" alt="二手器材区挂售的 4K 监视器实拍图" width="600" height="400" loading="lazy">
+          <div>
+            <time>2026-11-19</time>
+            <h3>二手器材区新增挂售规范，需提供成色实拍与使用时长</h3>
+            <p>新规则要求挂售帖至少包含三张实拍图与设备累计使用时长，未按要求填写的条目将在 48 小时后下架。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/hdex-news05/600/400" alt="噪点练习胶片扫描序列对比画面" width="600" height="400" loading="lazy">
+          <div>
+            <time>2026-11-16</time>
+            <h3>《噪点练习》追加第七种感光度扫描序列</h3>
+            <p>新增 108 帧完整扫描，覆盖不同显影时间下的颗粒变化，创作者同步公开了扫描仪型号与冲洗参数。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <img src="https://picsum.photos/seed/hdex-news06/600/400" alt="社区讨论区关于纪录片评分的界面截图" width="600" height="400" loading="lazy">
+          <div>
+            <time>2026-11-13</time>
+            <h3>纪录片评分权重调整，观看完成度占比下调</h3>
+            <p>调整后纪录片类目的评分更侧重评论深度与收藏数，避免长片因完成度天然偏低而被系统性压分。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 10 相关推荐 -->
+    <section class="block section" id="related">
+      <div class="block-head">
+        <h2><em>RELATED</em>延伸方向</h2>
+      </div>
+      <div class="rec-grid">
+        <a href="/#deepdive">夜景光源动机<small>方法</small></a>
+        <a href="/#deepdive">低成本柔光方案<small>器材</small></a>
+        <a href="/#featured">手持跟拍配重<small>技巧</small></a>
+        <a href="/#featured">同期声与拟音取舍<small>声音</small></a>
+        <a href="/#deepdive">Log 曲线与宽容度<small>概念</small></a>
+        <a href="/#guide">观察式纪录片入门<small>类型</small></a>
+        <a href="/#billboard">4K 监视器选购<small>器材</small></a>
+        <a href="/#latest">城市影像日记<small>方向</small></a>
+      </div>
+    </section>
+
+    <!-- 11 榜单 -->
+    <section class="block section" id="billboard">
+      <div class="block-head">
+        <h2><em>BOARD</em>口碑榜与放映日程</h2>
+        <a class="more-link" href="/#comments">查看讨论</a>
+      </div>
+      <div class="billboard">
+        <div class="bill-col">
+          <h4>近 30 天口碑榜</h4>
+          <ol class="bill-list">
+            <li><b>潮汐线</b><em>纪录片</em><span class="val">9.1</span></li>
+            <li><b>夜行者日志</b><em>剧情短片</em><span class="val">8.9</span></li>
+            <li><b>雨戏的三层环境声</b><em>制作拆解</em><span class="val">8.7</span></li>
+            <li><b>暗部里的肤色</b><em>调色工坊</em><span class="val">8.5</span></li>
+            <li><b>站台尽头</b><em>剧情短片</em><span class="val">8.4</span></li>
+            <li><b>噪点练习</b><em>实验影像</em><span class="val">8.2</span></li>
+          </ol>
+        </div>
+        <div class="bill-col">
+          <h4>本周放映日程</h4>
+          <ul class="timeline" style="border-left:2px solid var(--line)">
+            <li><time>11 月 27 日 19:30</time>上海·夜航《噪点练习》＋导演连线</li>
+            <li><time>11 月 29 日 14:00</time>成都·暗房《潮汐线》长片场（已满）</li>
+            <li><time>12 月 02 日 19:00</time>广州·噪点《站台尽头》一镜到底专场</li>
+            <li><time>12 月 05 日 20:00</time>北京·长焦 冬季工坊学员作品首映</li>
+            <li><time>12 月 06 日 10:00</time>线上 冬季创作者工坊开课</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右侧辅助栏 -->
+  <aside class="rail-right" aria-label="辅助信息">
+    <div class="side-card">
+      <h3>今日热榜</h3>
+      <ol class="rank-list">
+        <li><div><b>夜行者日志 4K 修复版</b><small>今天 09:30 上线</small></div></li>
+        <li><div><b>暗部里的肤色 v2</b><small>新增机型 LUT 对照</small></div></li>
+        <li><div><b>上海·夜航 11-27 场</b><small>余 14 席</small></div></li>
+        <li><div><b>站台尽头 走位图</b><small>6 张调度图公开</small></div></li>
+        <li><div><b>潮汐线 导演访谈</b><small>38 分钟录音稿</small></div></li>
+      </ol>
+    </div>
+
+    <div class="side-card">
+      <h3>条目时间线</h3>
+      <ul class="timeline">
+        <li><time>11-25</time>《夜行者日志》4K 修复版上线</li>
+        <li><time>11-24</time>冬季工坊课程表公布</li>
+        <li><time>11-23</time>上海夜航场次开放报名</li>
+        <li><time>11-21</time>放映小组扩至 27 城</li>
+        <li><time>11-19</time>二手器材区挂售新规</li>
+      </ul>
+    </div>
+
+    <div class="side-card quote-card">
+      <h3 style="color:var(--brand-ink)">创作者说</h3>
+      <p>「一镜到底不是为了炫技，是因为这条通道太窄，切镜头反而破坏空间感。我们排练了十九遍，最后用的是第十七遍。」</p>
+      <cite>——《站台尽头》摄影指导</cite>
+    </div>
+
+    <div class="side-card">
+      <h3>热门标签</h3>
+      <div class="tag-cloud">
+        <a href="/#deepdive">夜景拍摄</a>
+        <a href="/#deepdive">肤色校正</a>
+        <a href="/#featured">一镜到底</a>
+        <a href="/#deepdive">环境声</a>
+        <a href="/#featured">胶片颗粒</a>
+        <a href="/#guide">观察式纪录</a>
+        <a href="/#billboard">4K 监视器</a>
+        <a href="/#deepdive">低成本布光</a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">
+          <svg viewBox="0 0 40 40" role="img" aria-label="HDEXS 图形标志">
+            <rect x="1.5" y="1.5" width="37" height="37" rx="10" fill="#151c25"/>
+            <rect x="1.5" y="1.5" width="37" height="37" rx="10" fill="none" stroke="#ff8a3d" stroke-width="1.6"/>
+            <path d="M11 12v16M11 20h8M19 12v16" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+            <path d="M24 12h5.5a8 8 0 0 1 0 16H24z" fill="none" stroke="#ff8a3d" stroke-width="2.6" stroke-linejoin="round"/>
+          </svg>
+          <b>HDEXS HD HD</b>
+        </div>
+        <p class="foot-desc">聚焦高清放映与影像创作的中文社区。每周上新的短片首映、可复用的调色与收音工程拆解、摄影机实测记录，以及 27 个城市的线下放映小组。</p>
+      </div>
+      <div class="foot-groups">
+        <div>
+          <h4>内容频道</h4>
+          <ul>
+            <li><a href="/#featured">短片首映</a></li>
+            <li><a href="/#featured">纪录片</a></li>
+            <li><a href="/#featured">实验影像</a></li>
+            <li><a href="/#deepdive">调色工坊</a></li>
+            <li><a href="/#deepdive">收音与混音</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>参与方式</h4>
+          <ul>
+            <li><a href="/#latest">最新更新</a></li>
+            <li><a href="/#billboard">放映日程</a></li>
+            <li><a href="/#comments">社区讨论</a></li>
+            <li><a href="/#channels">器材二手</a></li>
+            <li><a href="/#guide">新人路径</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>说明</h4>
+          <ul>
+            <li><a href="/#overview">社区概览</a></li>
+            <li><a href="/#faq">常见问答</a></li>
+            <li><a href="/#news">近期动态</a></li>
+            <li><a href="/#related">延伸方向</a></li>
+            <li><a href="/#top">回到顶部</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="disclaimer">页面内条目名称、评分、播放量与放映场次均为站点运营示例数据，用于展示内容组织方式；条目图片为占位示意图。条目授权状态以条目页标注为准。</div>
+      <div>© 2026 HDEXS HD HD 影像社区 · 内容由社区创作者共同维护</div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" aria-label="回到顶部">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 13V3M8 3 3.5 7.5M8 3l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script>
+(function(){
+  var input = document.getElementById('siteSearch');
+  var grid = document.getElementById('cardGrid');
+  var empty = document.getElementById('searchEmpty');
+  if(input && grid){
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+    var timer = null;
+    var run = function(){
+      var q = input.value.trim().toLowerCase();
+      var hit = 0;
+      cards.forEach(function(c){
+        var text = (c.getAttribute('data-key') || '') + ' ' + c.textContent.toLowerCase();
+        var show = !q || text.indexOf(q) !== -1;
+        c.classList.toggle('hidden', !show);
+        if(show) hit++;
+      });
+      if(empty) empty.classList.toggle('show', hit === 0);
+    };
+    input.addEventListener('input', function(){
+      clearTimeout(timer);
+      timer = setTimeout(run, 120);
+    });
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Enter'){ e.preventDefault(); run(); }
+      if(e.key === 'Escape'){ input.value = ''; run(); input.blur(); }
+    });
+  }
+
+  var backTop = document.getElementById('backTop');
+  if(backTop){
+    backTop.addEventListener('click', function(){
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  }
+})();
+</script>
+</body>
+      </html>
